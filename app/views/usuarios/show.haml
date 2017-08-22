@@ -1,0 +1,35 @@
+.row.center-xs
+  .col-xs-10.col-sm-8.col-md-6.col-lg-4
+    .white.mdl-shadow--2dp.top-space.relative
+      .big-padding.white-text.text-left.cover.relative#user-cover{style:"background-image: url(#{@user.cover.url(:medium)})"}
+        =render "usuarios/menu_avatar"
+        .top-space#user-avatar
+          =circle_img @user.avatar.url(:medium),100
+      %section.border-bottom.top-space
+        .row.middle-xs
+          .col-xs
+            %h1.no-margin.medium
+              %span=best_in_place_if current_user == @user,@user, :name
+              %span=best_in_place_if current_user == @user,@user, :last_name
+            %p
+              %span=best_in_place_if current_user == @user,@user, :username
+          .col-xs-4.col-sm-2
+            -unless @are_friends
+              =button_to friendships_path(friend_id: @user.id),method: :post, remote: true, :"data-type" => "script", class:"mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" do
+                %i.material-icons person_add
+      .large-padding
+        .row
+          .col-xs
+            Seguidores
+          .col-xs
+            =@user.posts.count 
+            Posts
+          .row.center-xs
+            .col-xs-8.col-md-10
+              %span=best_in_place_if current_user == @user,@user, :bio
+      .top-space
+        =form_for @user,remote:true do |f|
+          =f.file_field :avatar,class: "remotipart"
+        =form_for @user,remote:true do |f|
+          =f.file_field :cover,class: "remotipart"
+        

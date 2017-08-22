@@ -1,0 +1,13 @@
+.row.center-xs
+  .col-xs-10.col-md-8
+    .white.large-padding
+      .border-bottom.padding-bottom
+        %p.text-left Amistades pendientes
+        =render @pending_friendships
+      .top-space
+        %p.text-left Amistades aceptadas
+        =render @accepted_friendships
+      .top-space
+        %p.text-left Mis solicitudes pendientes
+        =render @pending_requests
+        

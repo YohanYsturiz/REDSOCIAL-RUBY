@@ -1,0 +1,17 @@
+!!! 5
+%html
+  %head
+    %title Facilitoco
+    = csrf_meta_tags
+    = action_cable_meta_tag
+    %link{rel:"stylesheet", href:"https://code.getmdl.io/1.1.2/material.blue-pink.min.css"}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/flexboxgrid/6.3.0/flexboxgrid.min.css">
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    %script{defer:true, src:"https://code.getmdl.io/1.1.2/material.min.js"}
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+
+  %body
+    %p{style:"#{'display:none;' if notice.nil? && alert.nil?}"}
+      = notice
+      = alert
+    = yield

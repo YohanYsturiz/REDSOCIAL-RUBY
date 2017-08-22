@@ -1,0 +1,13 @@
+= form_for @post, remote: true do |f|
+  - if @post.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
+      %ul
+        - @post.errors.full_messages.each do |msg|
+          %li= msg
+          
+  .mdl-textfield.mdl-js-textfield.full-width
+    = f.text_area :body, class:"mdl-textfield__input",rows:"3"
+    = f.label :body,"Comparte con la comunidad",class:"mdl-textfield__label"
+  .actions.text-right
+    = f.submit 'Publicar', class:"mdl-button mdl-js-button mdl-button--raised mdl-button--colored"

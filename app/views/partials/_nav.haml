@@ -1,0 +1,16 @@
+%header.mdl-layout__header.mdl-layout__header--scroll
+  .mdl-layout__header-row
+    %span.mdl-layout-title=link_to "FacilitoCo",root_path,class:"white-text",style:"text-decoration:none;"
+    .mdl-layout-spacer
+    %nav.mdl-navigation.relative
+      -if user_signed_in?
+        #notifications
+        .right-space
+          =link_to "/notifications", class:" circle red white-text", id:"notification",remote: true, data:{type:"script"} do
+            =current_user.unviewed_notifications_count
+        =link_to "Mis amigos",friendships_path,class:"white-text right-space"
+        =link_to current_user.username,current_user,class:"white-text right-space"
+        =link_to "Cerrar sesión",destroy_user_session_path,method: :delete,class:"white-text"
+.mdl-layout__drawer
+  %span.mdl-layout-title FacilitoCo
+  %nav.mdl-navigation

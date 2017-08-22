@@ -1,0 +1,58 @@
+html,body {
+  height:100%;  
+}
+.absolute {
+    position:absolute;
+}
+.relative {
+    position:relative;
+}
+.full-height {
+    height:100%;
+}
+.full-width {
+    width:100%;
+}
+.no-margin {
+    margin:0px;
+}
+.right-space{
+    margin-right:1.5em;
+}
+.medium {
+    font-size: 1.2em;
+}
+.big-padding {
+    padding:2em 1.5em;
+}
+.padding-bottom{
+    padding-bottom:1em;
+}
+.border-bottom{
+    border-bottom: 1px solid currentcolor;
+}
+.large-padding {
+    padding: 10px 15px;
+}
+.top-space {
+    margin-top: 1em;
+}
+.underline {
+    text-decoration: underline;
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
+.remove-bullet-points {
+    list-style: none;
+    margin:0;
+}
+.circle {
+    border-radius:50%;
+}
